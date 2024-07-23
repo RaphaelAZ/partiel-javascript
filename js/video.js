@@ -23,6 +23,16 @@ class Video {
             video[0].pause();
             button.innerHTML = "<i class='fa-solid fa-play'></i>";
         });
+
+        const fullScreenButton = document.querySelector("#video > .video-overlay > #video-fullscreen");
+
+        fullScreenButton.addEventListener("click", () => {
+            if(!document.fullscreenElement) {
+                video[0].requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        });
     }
 }
 
